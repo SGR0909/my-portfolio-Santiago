@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact — Santiago</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    .custom-navbar {
+      width: fit-content;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50px;
+      border: 2px solid #ff003c;
+      font-family: 'Pagolla', sans-serif;
+      z-index: 2;
+      position: relative;
+    }
+
+    .nav-item {
+      color: rgb(255, 0, 0);
+      font-size: 16px;
+      cursor: pointer;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+
+    .nav-item:hover {
+      transform: scale(1.1);
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .contact-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: 100px;
+    }
+
+    .clock {
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact-form {
+      background-color: #111;
+      padding: 30px;
+      border: 2px solid red;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 300px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      background-color: #222;
+      border: 1px solid #444;
+      color: white;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      background-color: red;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Fondo de barras tipo Cherry -->
+  <canvas id="barsCanvas"></canvas>
+
+ <!-- Navbar -->
+    <div class="custom-navbar">
+      <div class="nav-item" onclick="location.href='index.html'">Home</div>
+      <div class="nav-item" onclick="location.href='about.html'">About</div>
+      <div class="nav-item" onclick="location.href='contact.html'">Contact</div>
+    </div>
+
+  <!-- ✅ Contenido principal -->
+  <div class="contact-wrapper">
+    <div class="clock" id="clock">Loading...</div>
+    <form class="contact-form">
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Last Name" />
+      <input type="email" placeholder="Email" />
+      <textarea rows="5" placeholder="Your Message..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- ✅ JS para la hora -->
+  <script>
+    function updateClock() {
+      const clock = document.getElementById("clock");
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-GB', { hour12: false });
+      const date = now.toLocaleDateString('en-GB');
+      clock.innerText = time + "\n" + date + "\nLONDON";
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- ✅ JS para barras -->
+  <script>
+    const canvas = document.getElementById("barsCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let bars = [];
+    const barCount = Math.floor(canvas.width / 10);
+
+    for (let i = 0; i < barCount; i++) {
+      bars.push({
+        x: i * 10,
+        height: Math.random() * canvas.height,
+        speed: 2 + Math.random() * 3
+      });
+    }
+
+    function animateBars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      bars.forEach(bar => {
+        bar.height += Math.sin(Date.now() * 0.002 + bar.x) * 3;
+        if (bar.height < 10) bar.height = 10;
+        ctx.fillStyle = "red";
+        ctx.fillRect(bar.x, canvas.height - bar.height, 8, bar.height);
+      });
+      requestAnimationFrame(animateBars);
+    }
+
+    animateBars();
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
+</html>
