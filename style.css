@@ -522,12 +522,13 @@ body::before {
   }
 }
 @media (max-width: 768px) {
-  #sketch-container-1,
-  #sketch-container-2,
-  #notesCanvas2-container,
-  canvas {
-    display: none !important;
-    height: 0 !important;
-    width: 0 !important;
+  #main-section .bar {
+    animation: riseBarsMobile 1s ease-out forwards;
+  }
+
+  @keyframes riseBarsMobile {
+    to {
+      height: 100vh;  /* Ya no sobrepasa la pantalla */
+    }
   }
 }
