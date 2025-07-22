@@ -491,20 +491,19 @@ body::before {
   }
 }
 @media (max-width: 768px) {
-  .red-box {
+  #main-section {
+    height: auto !important;
+    padding-bottom: 0 !important;
     margin-bottom: -40px !important;
-    padding-bottom: 10px !important;
   }
 
-  .set2-section {
-    margin-top: -120px !important;
-    padding-top: 0 !important;
-  }
-
-  .character {
+  .red-box {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  .phrase {
-    margin-bottom: 0 !important;
+  canvas,
+  .notes2-overlay {
+    display: none !important;
   }
+}

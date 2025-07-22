@@ -310,16 +310,19 @@ body {
   pointer-events: none;
 }
 @media (max-width: 768px) {
-  .about-top {
+  #main-section {
+    height: auto !important;
+    padding-bottom: 0 !important;
     margin-bottom: -40px !important;
   }
 
-  .aboutme-img {
+  .red-box {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  .skills-section {
-    margin-top: -40px !important;
-    padding-top: 10px !important;
+  canvas,
+  .notes2-overlay {
+    display: none !important;
   }
 }
