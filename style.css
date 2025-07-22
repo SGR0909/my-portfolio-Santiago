@@ -19,6 +19,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  overflow: hidden;
 }
 
 #main-section .cherry-bars {
@@ -530,5 +531,43 @@ body::before {
     to {
       height: 90vh;  /* Ya no sobrepasa la pantalla */
     }
+  }
+}
+@media (max-width: 768px) {
+  #main-section {
+    height: auto !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #main-section .cherry-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  #main-section .cherry-bars {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  #main-section .bar {
+    width: 60px;
+    height: 100vh !important;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    animation: none !important; /* Anulación en móviles */
   }
 }
