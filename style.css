@@ -528,7 +528,7 @@ body::before {
 
   @keyframes riseBarsMobile {
     to {
-      height: 100vh;  /* Ya no sobrepasa la pantalla */
+      height: 90vh;  /* Ya no sobrepasa la pantalla */
     }
   }
 }
