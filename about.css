@@ -309,36 +309,25 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-
-@keyframes floatDollar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
 @media (max-width: 768px) {
-  .titulo-depop,
-  .titulo-colocho,
-  .titulo-express {
-    width: 200px;
+  .about-top-section {
+    height: auto;
+    padding-bottom: 40px;
   }
 
-  .work-image {
-    width: 90%;
+  .about-top-section img {
+    max-width: 150px;
+    height: auto;
+    margin-top: 20px;
   }
 
-  .descripcion {
-    max-width: 90%;
-    font-size: 14px;
-    padding: 15px;
+  .about-title {
+    font-size: 28px;
+    margin-top: 20px;
   }
 
-  .custom-navbar {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .nav-item {
-    width: 80%;
-    text-align: center;
+  .skills-section {
+    margin-top: -30px;
+    padding-bottom: 60px;
   }
 }
