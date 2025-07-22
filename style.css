@@ -481,10 +481,11 @@ body::before {
 }
 @media (max-width: 768px) {
   html, body {
-    height: 100vh;
-    overflow: hidden;
     padding: 0;
     margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   #main-section {
@@ -492,25 +493,26 @@ body::before {
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
-    position: relative !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .red_box {
-    margin: 0 !important;
+    margin: 0 auto !important;
     padding: 0 !important;
     position: relative !important;
-  }
-
-  .character,
-  .notes2-overlay,
-  canvas {
-    bottom: 0 !important;
-    margin-bottom: 0 !important;
+    height: auto !important;
   }
 
   .phrase {
-    position: relative !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 20px !important;
     padding-bottom: 0 !important;
+    position: relative !important;
+  }
+
+  .notes2-overlay,
+  canvas {
+    display: none !important;
   }
 }
