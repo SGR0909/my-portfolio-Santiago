@@ -310,24 +310,18 @@ body {
   pointer-events: none;
 }
 @media (max-width: 768px) {
-  .about-top-section {
-    height: auto;
-    padding-bottom: 40px;
+  .about-main-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
-  .about-top-section img {
-    max-width: 150px;
-    height: auto;
-    margin-top: 20px;
-  }
-
-  .about-title {
-    font-size: 28px;
-    margin-top: 20px;
+  .about-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .skills-section {
-    margin-top: -30px;
-    padding-bottom: 60px;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
