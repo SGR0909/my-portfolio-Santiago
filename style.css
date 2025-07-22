@@ -480,32 +480,37 @@ body::before {
   }
 }
 @media (max-width: 768px) {
-  #main-section {
-    height: auto !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
+  html, body {
+    height: 100vh;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
-  .red-box {
-    margin-bottom: 20px !important;
+  #main-section {
+    height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+
+  .red_box {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  .character,
+  .notes2-overlay,
+  canvas {
+    bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .phrase {
+    position: relative !important;
+    margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-  }
-
-  canvas,
-  .notes2-overlay {
-    display: none !important;
-  }
-
-  .footer-section {
-    margin-top: 0 !important;
-  }
-
-  .about-text-section {
-    margin-bottom: 80px !important;
-  }
-
-  .skills-section {
-    margin-top: 100px !important;
   }
 }
