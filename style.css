@@ -507,3 +507,12 @@ body::before {
     display: none !important;
   }
 }
+@media (max-width: 768px) {
+  .about-text-section {
+    margin-bottom: 100px !important;
+  }
+
+  .skills-section {
+    margin-top: 120px !important;
+  }
+}

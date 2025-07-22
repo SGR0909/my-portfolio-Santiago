@@ -310,19 +310,11 @@ body {
   pointer-events: none;
 }
 @media (max-width: 768px) {
-  #main-section {
-    height: auto !important;
-    padding-bottom: 0 !important;
-    margin-bottom: -40px !important;
+  .about-text-section {
+    margin-bottom: 100px !important;
   }
 
-  .red-box {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  canvas,
-  .notes2-overlay {
-    display: none !important;
+  .skills-section {
+    margin-top: 120px !important;
   }
 }
